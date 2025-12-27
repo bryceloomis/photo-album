@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Gallery | Photo Album{% endblock %}
+
+{% block content %}
+<section class="gallery-header">
+    <h1>My Photo Gallery</h1>
+    <p>{{ photos | length }} photos</p>
+</section>
+
+<section class="gallery">
+    {% if photos %}
+        {% for photo in photos %}
+        <div class="photo-card">
+            <img src="{{ photo.url }}" alt="{{ photo.filename }}" loading="lazy">
+            <div class="photo-info">
+                <span class="filename">{{ photo.filename }}</span>
+            </div>
+        </div>
+        {% endfor %}
+    {% else %}
+        <div class="empty-state">
+            <p>No photos yet!</p>
+            <p class="hint">Add images to <code>static/photos/</code> to get started.</p>
+        </div>
+    {% endif %}
+</section>
+{% endblock %}

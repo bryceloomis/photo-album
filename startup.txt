@@ -1,0 +1,3 @@
+cd /Users/bryceloomis/Documents/projects/photo-album
+
+ssh -i photo-album-key-pair.pem ubuntu@3.145.23.115
